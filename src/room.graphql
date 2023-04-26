@@ -1,0 +1,30 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Room {
+  name: String
+  description: String
+  isBooked: String
+  bookedBy: String
+  bookedFromTime: String
+  bookedToTime: String
+}
+
+type Query {
+  sayHello: String!
+  getAllRoom: [Room!]!
+  getRoomByID(id: String!): Room!
+}
+
+type Mutation {
+  createRoom(name: String!): Room!
+  updateRoom(id: String!, name: String!): Room!
+  deleteRoom(id: String!): Room!
+  bookRoom(id: String!, from: DateTime!, to: DateTime!, name: String!): Room!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
